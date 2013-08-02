@@ -33,7 +33,7 @@ def before_request():
 def teardown_request(exception):
     pass
 
-
+'''
 def get_token(host_ip):
     global G_INFO
     params = '{"auth": {"tenantName": "%s", "passwordCredentials": {"username": "%s", "password": "%s"}}}' 
@@ -64,7 +64,7 @@ def get_token(host_ip):
 
 
     return token_id, nova_url, keystone_adminurl, keystone_publicurl
-
+'''
 
 @app.route('/')
 def index():
