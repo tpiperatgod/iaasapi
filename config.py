@@ -31,3 +31,19 @@ NODE_MAP = {'NN2': '192.168.0.57',
 #IAASAPI
 SERVER_IP = '172.18.1.17'
 SERVER_PORT = '8080'
+
+SERVICE_PATH_TEMP = {'getToken': "/v2.0/tokens",
+                     'createTenant': "/v2.0/tenants",
+                     'releaseTenant': "/v2.0/tenants/%s",
+                     'getQuota': "/%s/os-quota-sets/%s",
+                     'createPort': "/v2.0/ports",
+                     'createServer': "/%s/servers",
+                     'startServer': "/%s/servers/%s/action",
+                     'stopServer': "/%s/servers/%s/action",
+                     'releaseServer': "/%s/servers/%s",
+                     'checkServer': "/%s/servers/%s",
+                     'startServer': "/%s/servers/%s/action",
+                     'stopServer': "/%s/servers/%s/action",
+                     'getImages': "/%s/images/detail",
+                     'getFlavors': "/%s/flavors/detail",
+                     'createAcl': "/v2.0/acls"}

@@ -103,7 +103,6 @@ class IaasApi():
             elif service == 'iaasReleaseTenant':
                 try:
                     tenant_id = req.headers['x-wocloud-iaas-tenantid']
-#                     tenant_id = "66dc9108487d4a2a96b8af1b52468385"
                     print "tenant id: ", tenant_id
                     _rsp = api.iaas_release_tenant(_keystone_ip, tenant_id)
                     print ">>>Rsp: ", _rsp

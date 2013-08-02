@@ -1,0 +1,175 @@
+[2013-08-01 20:33:11,885](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 20:33:42,255](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 20:33:42,255](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1566, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+[2013-08-01 20:33:42,295](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 20:33:42] "GET / HTTP/1.1" 500 -
+[2013-08-01 20:35:21,475](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 20:35:27,709](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 20:35:27,710](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 20:35:27,711](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1566, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+[2013-08-01 20:35:27,734](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 20:35:27] "GET / HTTP/1.1" 500 -
+[2013-08-01 21:13:00,912](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 21:13:04,995](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:13:04,996](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "iaasapi.py", line 72, in index
+    token_info = get_token(app.config['OPSTACK_IP'])
+  File "iaasapi.py", line 43, in get_token
+    "url": _host_ip + ':35357',
+NameError: global name '_host_ip' is not defined
+[2013-08-01 21:13:05,039](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:13:05] "GET / HTTP/1.1" 500 -
+[2013-08-01 21:15:10,878](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 21:15:14,566](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:15:14,724](DEBUG)__main__ : (u'9d69dd45f864491bbcc2fa0ccbaa2675', ParseResult(scheme=u'http', netloc=u'192.168.0.55:8774', path=u'/v2/e6442e3d73cc4a848d5acb44b618c144', params='', query='', fragment=''), ParseResult(scheme=u'http', netloc=u'192.168.0.55:35357', path=u'/v2.0', params='', query='', fragment=''), ParseResult(scheme=u'http', netloc=u'192.168.0.55:5000', path=u'/v2.0', params='', query='', fragment=''))
+[2013-08-01 21:15:14,726](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1563, in make_response
+    rv, status, headers = rv + (None,) * (3 - len(rv))
+ValueError: too many values to unpack
+[2013-08-01 21:15:14,745](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:15:14] "GET / HTTP/1.1" 500 -
+[2013-08-01 21:24:36,485](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 21:24:49,177](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:24:49,289](DEBUG)__main__ : (u'5406f45639b047aea9f2ac20d26506ea', ParseResult(scheme=u'http', netloc=u'192.168.0.55:8774', path=u'/v2/e6442e3d73cc4a848d5acb44b618c144', params='', query='', fragment=''), ParseResult(scheme=u'http', netloc=u'192.168.0.55:35357', path=u'/v2.0', params='', query='', fragment=''), ParseResult(scheme=u'http', netloc=u'192.168.0.55:5000', path=u'/v2.0', params='', query='', fragment=''))
+[2013-08-01 21:24:49,290](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1563, in make_response
+    rv, status, headers = rv + (None,) * (3 - len(rv))
+ValueError: too many values to unpack
+[2013-08-01 21:24:49,305](INFO)werkzeug : 127.0.0.1 - - [01/Aug/2013 21:24:49] "GET / HTTP/1.1" 500 -
+[2013-08-01 21:29:29,616](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 21:29:32,662](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:29:33,036](DEBUG)__main__ : (u'd446f15dc4d34799864143c702577691', ParseResult(scheme=u'http', netloc=u'192.168.0.55:8774', path=u'/v2/e6442e3d73cc4a848d5acb44b618c144', params='', query='', fragment=''), ParseResult(scheme=u'http', netloc=u'192.168.0.55:35357', path=u'/v2.0', params='', query='', fragment=''), ParseResult(scheme=u'http', netloc=u'192.168.0.55:5000', path=u'/v2.0', params='', query='', fragment=''))
+[2013-08-01 21:29:33,038](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:29:33] "GET / HTTP/1.1" 200 -
+[2013-08-01 21:30:13,699](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 21:30:15,551](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:30:15,683](DEBUG)__main__ : (u'91e0c5844fd74205af7b272499e918d4', ParseResult(scheme=u'http', netloc=u'192.168.0.55:8774', path=u'/v2/e6442e3d73cc4a848d5acb44b618c144', params='', query='', fragment=''), ParseResult(scheme=u'http', netloc=u'192.168.0.55:35357', path=u'/v2.0', params='', query='', fragment=''), ParseResult(scheme=u'http', netloc=u'192.168.0.55:5000', path=u'/v2.0', params='', query='', fragment=''))
+[2013-08-01 21:30:15,684](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:30:15] "GET / HTTP/1.1" 200 -
+[2013-08-01 21:32:18,393](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 21:32:24,950](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:32:24,968](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:32:24] "GET /get_token HTTP/1.1" 404 -
+[2013-08-01 21:32:27,333](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:32:27,453](ERROR)__main__ : Exception on /get_tokens [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1563, in make_response
+    rv, status, headers = rv + (None,) * (3 - len(rv))
+ValueError: too many values to unpack
+[2013-08-01 21:32:27,455](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:32:27] "GET /get_tokens HTTP/1.1" 500 -
+[2013-08-01 21:33:15,374](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 21:33:18,378](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:33:18,502](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:33:18] "GET /get_tokens HTTP/1.1" 200 -
+[2013-08-01 21:47:05,525](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 21:47:08,513](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:47:08,551](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:47:08] "GET /get_tokens HTTP/1.1" 404 -
+[2013-08-01 21:47:12,589](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:47:12,718](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:47:12] "GET /get_token HTTP/1.1" 200 -
+[2013-08-01 21:51:20,241](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 21:51:23,288](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:51:23,427](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:51:23] "GET /get_token HTTP/1.1" 200 -
+[2013-08-01 21:51:36,413](DEBUG)__main__ : 192.168.0.55
+[2013-08-01 21:51:36,414](DEBUG)__main__ : ++++++++++++++++++++
+[2013-08-01 21:51:36,414](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "iaasapi.py", line 140, in index
+    {'token': g.token, 'nova': g.nova_url, 'keyA': g.keystone_adminurl,
+  File "/usr/lib/python2.6/site-packages/werkzeug/local.py", line 338, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: '_AppCtxGlobals' object has no attribute 'token'
+[2013-08-01 21:51:36,464](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 21:51:36] "GET / HTTP/1.1" 500 -
+[2013-08-01 22:01:47,667](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:01:52,014](DEBUG)__main__ : ++++++++++++++++++++
+[2013-08-01 22:01:52,015](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "iaasapi.py", line 138, in index
+    'keyP': g.keystone_public})
+  File "/usr/lib/python2.6/site-packages/werkzeug/local.py", line 338, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: '_AppCtxGlobals' object has no attribute 'keystone_public'
+[2013-08-01 22:01:52,041](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:01:52] "GET / HTTP/1.1" 500 -
+[2013-08-01 22:02:14,579](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:02:17,308](DEBUG)__main__ : ++++++++++++++++++++
+[2013-08-01 22:02:17,308](DEBUG)__main__ : token: 83ffd0044fb14bbb9ec554840f8f7fa9, nova: ParseResult(scheme=u'http', netloc=u'192.168.0.55:8774', path=u'/v2/e6442e3d73cc4a848d5acb44b618c144', params='', query='', fragment=''), keystoneA: ParseResult(scheme=u'http', netloc=u'192.168.0.55:35357', path=u'/v2.0', params='', query='', fragment=''), keystoneP: ParseResult(scheme=u'http', netloc=u'192.168.0.55:5000', path=u'/v2.0', params='', query='', fragment='')
+[2013-08-01 22:02:17,310](DEBUG)__main__ : ++++++++++++++++++++
+[2013-08-01 22:02:17,311](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:02:17] "GET / HTTP/1.1" 200 -
+[2013-08-01 22:34:30,115](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:34:34,907](DEBUG)__main__ : ++++++++++++++++++++
+[2013-08-01 22:34:34,907](DEBUG)__main__ : token: b1cb3e680ff145b59cf59e5b06157a8a, nova: 192.168.0.55:8774/v2/e6442e3d73cc4a848d5acb44b618c144
+[2013-08-01 22:34:34,908](DEBUG)__main__ : ++++++++++++++++++++
+[2013-08-01 22:34:34,909](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:34:34] "GET / HTTP/1.1" 200 -
+[2013-08-01 22:38:27,426](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:38:29,537](DEBUG)__main__ : ++++++++++++++++++++
+[2013-08-01 22:38:29,537](DEBUG)__main__ : token: c2e499b4ecf3419aab452f6d18577859, nova: /v2/e6442e3d73cc4a848d5acb44b618c144
+[2013-08-01 22:38:29,537](DEBUG)__main__ : ++++++++++++++++++++
+[2013-08-01 22:38:29,538](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:38:29] "GET / HTTP/1.1" 200 -
+[2013-08-01 22:42:17,828](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:42:27,241](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:42:27] "GET /get_quota/e6442e3d73cc4a848d5acb44b618c144 HTTP/1.1" 404 -
+[2013-08-01 22:43:06,309](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:43:09,157](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:43:09] "GET /get_quota/e6442e3d73cc4a848d5acb44b618c144 HTTP/1.1" 404 -
+[2013-08-01 22:43:48,203](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:43:50,596](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:43:50] "GET /get_quota/e6442e3d73cc4a848d5acb44b618c144 HTTP/1.1" 404 -
+[2013-08-01 22:44:53,838](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:44:56,932](DEBUG)__main__ : start get quota
+[2013-08-01 22:44:56,980](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:44:56] "GET /get_quota/e6442e3d73cc4a848d5acb44b618c144 HTTP/1.1" 200 -
+[2013-08-01 22:45:55,206](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:46:02,780](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:46:02] "GET /get_quota/?e6442e3d73cc4a848d5acb44b618c144 HTTP/1.1" 404 -
+[2013-08-01 22:46:06,038](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:46:06] "GET /get_quota/e6442e3d73cc4a848d5acb44b618c144 HTTP/1.1" 404 -
+[2013-08-01 22:51:29,120](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:51:29] "GET /get_quota/e6442e3d73cc4a848d5acb44b618c144 HTTP/1.1" 404 -
+[2013-08-01 22:51:31,905](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-01 22:51:33,165](DEBUG)__main__ : start get quota
+[2013-08-01 22:51:33,208](INFO)werkzeug : 192.168.81.1 - - [01/Aug/2013 22:51:33] "GET /get_quota/e6442e3d73cc4a848d5acb44b618c144 HTTP/1.1" 200 -
