@@ -13,18 +13,23 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 from contextlib import closing
 
+import logging
+import logging.config
+
 DEBUG = True
 SECRET_KEY = 'I AM TURTLE ENDER'
 
 app = Flask(__name__)
 app.config.from_object('config')
 
+logging.config.fileConfig("logging.conf")
+LOG = logging.getLogger(__name__)
 
 @app.before_request
 def before_request():
     pass
 
-
+@app.teardown_request
 def teardown_request(exception):
     pass
 
@@ -63,7 +68,7 @@ def get_token(host_ip):
 
 @app.route('/')
 def index():
-    print app.config
+    LOG.debug(app.config['RABBITMQ_IP'])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
