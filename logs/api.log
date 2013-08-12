@@ -976,3 +976,610 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
 TypeError: get_quota_rsp_deco() takes exactly 1 argument (0 given)
 [2013-08-09 02:02:31,977](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 02:02:31] "POST /get_quota/ HTTP/1.1" 500 -
+[2013-08-09 18:28:18,694](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-09 18:28:44,009](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:28:44] "POST / HTTP/1.1" 400 -
+[2013-08-09 18:29:25,799](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-09 18:29:27,835](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:29:27] "POST / HTTP/1.1" 400 -
+[2013-08-09 18:30:40,911](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-09 18:30:42,896](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:30:42] "POST / HTTP/1.1" 400 -
+[2013-08-09 18:30:54,885](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:30:54] "POST / HTTP/1.1" 400 -
+[2013-08-09 18:31:32,667](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-09 18:31:33,817](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:31:33] "POST / HTTP/1.1" 400 -
+[2013-08-09 18:31:38,815](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:31:38] "GET / HTTP/1.1" 405 -
+[2013-08-09 18:31:57,826](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-09 18:32:00,876](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:32:00] "POST / HTTP/1.1" 200 -
+[2013-08-09 18:32:08,684](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:32:08] "POST / HTTP/1.1" 200 -
+[2013-08-09 18:32:24,136](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-09 18:32:25,594](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:32:25] "POST / HTTP/1.1" 400 -
+[2013-08-09 18:33:02,011](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-09 18:33:03,504](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:33:03] "POST / HTTP/1.1" 200 -
+[2013-08-09 18:33:37,086](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-09 18:33:38,875](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:33:38] "POST / HTTP/1.1" 200 -
+[2013-08-09 18:35:13,631](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-09 18:35:19,113](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1473, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1666, in preprocess_request
+    rv = func()
+  File "app.py", line 38, in before_request
+    g.p = json.loads(request.form.items()[0][0])
+IndexError: list index out of range
+[2013-08-09 18:35:19,132](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:35:19] "GET / HTTP/1.1" 500 -
+[2013-08-09 18:35:23,648](ERROR)__main__ : Exception on / [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1473, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1666, in preprocess_request
+    rv = func()
+  File "app.py", line 38, in before_request
+    g.p = json.loads(request.form.items()[0][0])
+IndexError: list index out of range
+[2013-08-09 18:35:23,649](INFO)werkzeug : 127.0.0.1 - - [09/Aug/2013 18:35:23] "POST / HTTP/1.1" 500 -
+[2013-08-11 20:26:42,109](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:26:45,574](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1473, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1666, in preprocess_request
+    rv = func()
+  File "app.py", line 38, in before_request
+    g.p = json.loads(request.form.items()[0][0])
+IndexError: list index out of range
+[2013-08-11 20:26:45,598](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:26:45] "GET / HTTP/1.1" 500 -
+[2013-08-11 20:27:20,429](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:27:22,605](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:27:22] "GET / HTTP/1.1" 405 -
+[2013-08-11 20:27:38,233](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:27:40,694](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 50, in index
+    return render_template('index.html', info = info)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/opt/app/ephem_flask/templates/index.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "/opt/app/ephem_flask/templates/layout.html", line 4, in top-level template code
+    <title>{{ g.site[1] }}</title>
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 378, in getitem
+    return obj[argument]
+UndefinedError: 'flask.ctx._AppCtxGlobals object' has no attribute 'site'
+[2013-08-11 20:27:40,725](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:27:40] "GET / HTTP/1.1" 500 -
+[2013-08-11 20:28:04,465](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:28:05,699](ERROR)__main__ : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 50, in index
+    return render_template('index.html', info = info)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/opt/app/ephem_flask/templates/index.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "/opt/app/ephem_flask/templates/layout.html", line 6, in top-level template code
+    <link href="{{ url_for('bootstrap', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+  File "/usr/local/lib/python2.7/dist-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/routing.py", line 1620, in build
+    raise BuildError(endpoint, values, method)
+BuildError: ('bootstrap', {'filename': 'css/bootstrap.min.css'}, None)
+[2013-08-11 20:28:05,740](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:28:05] "GET / HTTP/1.1" 500 -
+[2013-08-11 20:29:26,581](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:29:26,581](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 20:29:29,652](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:29:29] "GET / HTTP/1.1" 500 -
+[2013-08-11 20:29:29,720](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:29:29] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2013-08-11 20:29:29,742](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:29:29] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2013-08-11 20:29:29,744](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:29:29] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2013-08-11 20:29:29,755](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:29:29] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 20:29:29,855](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:29:29] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 20:29:29,866](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:29:29] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+[2013-08-11 20:30:45,986](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:30:45,987](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 20:30:48,455](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:30:48] "GET / HTTP/1.1" 500 -
+[2013-08-11 20:30:48,492](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:30:48] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2013-08-11 20:30:48,494](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:30:48] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2013-08-11 20:30:48,495](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:30:48] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2013-08-11 20:30:48,496](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:30:48] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 20:30:48,603](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:30:48] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 20:30:48,604](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:30:48] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+[2013-08-11 20:55:57,383](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:55:57,384](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 20:56:00,399](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:00] "GET / HTTP/1.1" 500 -
+[2013-08-11 20:56:00,446](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:00] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2013-08-11 20:56:00,451](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:00] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2013-08-11 20:56:00,453](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:00] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2013-08-11 20:56:00,524](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:00] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 20:56:00,593](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:00] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 20:56:00,599](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:00] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+[2013-08-11 20:56:28,714](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:56:28,714](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 20:56:31,247](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:31] "GET / HTTP/1.1" 200 -
+[2013-08-11 20:56:31,486](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:31] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 20:56:31,666](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:31] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 20:56:31,852](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:56:31] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 20:57:06,386](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:57:06,387](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 20:57:10,610](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:57:10] "GET / HTTP/1.1" 200 -
+[2013-08-11 20:57:10,830](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:57:10] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 20:57:11,008](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:57:11] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 20:57:11,190](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:57:11] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 20:57:32,336](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:57:32,337](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 20:57:38,790](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:57:38] "GET / HTTP/1.1" 200 -
+[2013-08-11 20:57:39,024](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:57:39] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 20:57:39,205](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:57:39] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 20:57:39,384](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:57:39] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 20:59:45,750](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 20:59:45,750](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 20:59:46,911](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:59:46] "GET / HTTP/1.1" 200 -
+[2013-08-11 20:59:47,133](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:59:47] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 20:59:47,304](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:59:47] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 20:59:47,480](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:59:47] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 20:59:51,448](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:59:51] "GET / HTTP/1.1" 200 -
+[2013-08-11 20:59:51,663](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:59:51] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 20:59:51,844](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:59:51] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 20:59:52,024](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 20:59:52] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 21:02:55,868](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:02:55,869](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:02:58,321](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:02:58] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:02:58,535](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:02:58] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 21:02:58,723](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:02:58] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:02:58,899](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:02:58] "GET /bootstrap/js/jQuery.js HTTP/1.1" 404 -
+[2013-08-11 21:02:59,076](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:02:59] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 21:03:52,085](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:03:52] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:03:52,378](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:03:52] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 21:03:52,550](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:03:52] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:03:52,728](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:03:52] "GET /bootstrap/js/jQuery.js HTTP/1.1" 404 -
+[2013-08-11 21:03:52,906](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:03:52] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 21:03:53,126](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:03:53] "GET /favicon.ico HTTP/1.1" 404 -
+[2013-08-11 21:09:32,619](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:09:32,620](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:09:34,605](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:09:34] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:09:34,812](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:09:34] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 21:09:34,982](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:09:34] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:09:35,155](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:09:35] "GET /bootstrap/js/jQuery.js HTTP/1.1" 404 -
+[2013-08-11 21:09:35,326](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:09:35] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 21:10:02,803](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:10:02,804](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:10:07,044](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:10:07] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:10:07,279](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:10:07] "GET /bootstrap/css/bootstrap.css HTTP/1.1" 404 -
+[2013-08-11 21:10:07,518](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:10:07] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:10:07,828](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:10:07] "GET /bootstrap/js/jQuery.js HTTP/1.1" 404 -
+[2013-08-11 21:10:08,075](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:10:08] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 21:10:40,585](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:10:40] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:10:40,815](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:10:40] "GET /bootstrap/css/bootstrap.css HTTP/1.1" 404 -
+[2013-08-11 21:10:40,996](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:10:40] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:10:41,175](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:10:41] "GET /bootstrap/js/jQuery.js HTTP/1.1" 404 -
+[2013-08-11 21:10:41,347](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:10:41] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 21:11:01,002](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:11:01,002](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:11:05,094](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:05] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:11:05,322](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:05] "GET /bootstrap/css/bootstrap.css HTTP/1.1" 404 -
+[2013-08-11 21:11:05,493](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:05] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:11:05,665](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:05] "GET /bootstrap/js/jQuery.js HTTP/1.1" 404 -
+[2013-08-11 21:11:05,841](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:05] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 21:11:43,670](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:11:43,670](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:11:47,712](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:47] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:11:47,942](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:47] "GET /bootstrap/css/bootstrap.css HTTP/1.1" 404 -
+[2013-08-11 21:11:48,122](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:48] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:11:48,297](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:48] "GET /bootstrap/js/jQuery.js HTTP/1.1" 404 -
+[2013-08-11 21:11:48,471](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:48] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 21:11:49,523](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:49] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:11:49,713](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:49] "GET /bootstrap/css/bootstrap.css HTTP/1.1" 404 -
+[2013-08-11 21:11:49,889](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:49] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:11:50,064](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:50] "GET /bootstrap/js/jQuery.js HTTP/1.1" 404 -
+[2013-08-11 21:11:50,242](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:11:50] "GET /bootstrap/js/bootstap.js HTTP/1.1" 404 -
+[2013-08-11 21:15:46,957](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:15:46,958](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:15:50,085](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:15:50] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:15:50,311](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:15:50] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 21:15:50,511](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:15:50] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:15:51,337](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:15:51] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:16:30,244](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:16:30,244](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:16:32,971](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:16:32] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:16:33,182](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:16:33] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 21:16:33,363](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:16:33] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:16:33,714](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:16:33] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:19:41,852](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:19:41,852](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:19:44,165](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:19:44] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:19:44,419](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:19:44] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 21:19:44,646](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:19:44] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:19:44,898](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:19:44] "GET /bootstrap/img/glyphicons-halflings-white.png HTTP/1.1" 404 -
+[2013-08-11 21:19:45,078](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:19:45] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:19:45,269](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:19:45] "GET /bootstrap/img/glyphicons-halflings-white.png HTTP/1.1" 404 -
+[2013-08-11 21:19:58,524](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:19:58,525](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:20:01,002](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:20:01] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:20:01,221](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:20:01] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 21:20:01,401](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:20:01] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:20:01,572](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:20:01] "GET /bootstrap/img/glyphicons-halflings-white.png HTTP/1.1" 404 -
+[2013-08-11 21:20:01,744](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:20:01] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:20:01,941](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:20:01] "GET /bootstrap/img/glyphicons-halflings-white.png HTTP/1.1" 404 -
+[2013-08-11 21:22:50,385](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:22:50] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:22:50,585](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:22:50] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 404 -
+[2013-08-11 21:22:50,768](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:22:50] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:22:50,943](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:22:50] "GET /bootstrap/img/glyphicons-halflings-white.png HTTP/1.1" 404 -
+[2013-08-11 21:22:51,121](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:22:51] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 404 -
+[2013-08-11 21:22:51,321](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:22:51] "GET /bootstrap/img/glyphicons-halflings-white.png HTTP/1.1" 404 -
+[2013-08-11 21:24:27,892](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:24:27,892](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:24:30,076](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:24:30] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:24:30,283](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:24:30] "GET /static/css/bootstrap.css HTTP/1.1" 200 -
+[2013-08-11 21:24:30,475](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:24:30] "GET /static/js/jQuery.js HTTP/1.1" 200 -
+[2013-08-11 21:24:30,651](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:24:30] "GET /static/js/bootstrap.js HTTP/1.1" 200 -
+[2013-08-11 21:25:35,815](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:25:35,816](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:25:37,336](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:25:37] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:25:37,549](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:25:37] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 21:25:37,720](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:25:37] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 21:25:37,898](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:25:37] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 21:26:23,591](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:26:23,592](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:26:26,047](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:26:26] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:26:26,256](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:26:26] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 21:26:26,433](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:26:26] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 21:26:26,617](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:26:26] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 21:34:47,891](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:34:47,891](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:34:52,109](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:34:52] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:34:52,329](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:34:52] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 21:34:52,505](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:34:52] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 21:34:52,693](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:34:52] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 21:40:14,254](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:40:14,255](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:40:16,368](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:40:16] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:40:18,603](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:40:18] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 21:40:18,779](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:40:18] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 21:40:18,954](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:40:18] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 21:50:44,184](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:50:44] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:50:44,393](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:50:44] "GET /static/css/bootstrap.css HTTP/1.1" 200 -
+[2013-08-11 21:50:44,593](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:50:44] "GET /static/js/jQuery.js HTTP/1.1" 200 -
+[2013-08-11 21:50:44,811](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 21:50:44] "GET /static/js/bootstrap.js HTTP/1.1" 200 -
+[2013-08-11 21:54:45,527](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:54:45,528](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:54:46,848](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:54:46] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:54:47,081](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:54:47] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 21:54:47,254](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:54:47] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 21:54:47,429](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:54:47] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 21:55:09,339](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:55:09,340](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:55:11,058](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:55:11] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:55:11,269](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:55:11] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 21:55:11,444](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:55:11] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 21:55:11,616](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:55:11] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 21:55:44,664](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:55:44,665](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:55:45,683](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:55:45] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:55:45,902](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:55:45] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 21:55:46,079](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:55:46] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 21:55:46,256](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:55:46] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 21:58:51,388](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:58:51,389](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:58:53,759](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:58:53] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:58:53,974](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:58:53] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 21:58:54,154](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:58:54] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 21:58:54,351](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:58:54] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 21:59:20,742](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 21:59:20,743](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 21:59:21,845](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:59:21] "GET / HTTP/1.1" 200 -
+[2013-08-11 21:59:22,055](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:59:22] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 21:59:22,227](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:59:22] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 21:59:24,422](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 21:59:24] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:03:09,778](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:03:09] "GET / HTTP/1.1" 200 -
+[2013-08-11 22:03:10,023](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:03:10] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:03:10,227](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:03:10] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:03:12,453](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:03:12] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:04:16,558](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:04:16,593](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:04:46,173](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:04:46,174](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:04:48,372](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:04:48] "GET / HTTP/1.1" 200 -
+[2013-08-11 22:04:48,621](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:04:48] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:04:48,794](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:04:48] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:04:48,974](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:04:48] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:06:03,484](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:06:03,486](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:06:04,723](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:06:04] "GET / HTTP/1.1" 200 -
+[2013-08-11 22:06:04,929](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:06:04] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:06:05,107](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:06:05] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:06:05,412](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:06:05] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:07:19,633](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:07:19,635](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:07:22,139](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:07:22] "GET / HTTP/1.1" 200 -
+[2013-08-11 22:07:22,351](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:07:22] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:07:22,527](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:07:22] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:07:22,696](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:07:22] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:08:35,459](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:08:35] "GET / HTTP/1.1" 200 -
+[2013-08-11 22:08:35,680](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:08:35] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:08:35,880](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:08:35] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:08:36,071](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:08:36] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:11:56,855](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:11:56,892](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:12:37,457](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:12:37,458](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:12:39,930](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:12:39] "GET / HTTP/1.1" 500 -
+[2013-08-11 22:12:39,968](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:12:39] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2013-08-11 22:12:39,973](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:12:39] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2013-08-11 22:12:39,975](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:12:39] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2013-08-11 22:12:40,012](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:12:40] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 22:12:40,062](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:12:40] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 22:12:40,063](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:12:40] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+[2013-08-11 22:13:04,076](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:13:04,108](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:13:06,069](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:13:06,070](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:13:07,336](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:13:07] "GET / HTTP/1.1" 200 -
+[2013-08-11 22:13:07,539](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:13:07] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:13:07,715](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:13:07] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:13:07,892](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:13:07] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:13:21,294](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:13:21] "GET /s HTTP/1.1" 404 -
+[2013-08-11 22:14:04,979](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:14:05,016](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:14:10,480](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:14:10,502](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:14:32,767](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:14:32,768](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:14:34,740](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:14:34] "GET / HTTP/1.1" 200 -
+[2013-08-11 22:14:34,954](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:14:34] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:14:35,129](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:14:35] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:14:35,308](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:14:35] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:14:39,956](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:14:39] "GET /s HTTP/1.1" 404 -
+[2013-08-11 22:15:35,782](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:15:35,811](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:15:41,232](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:15:41,267](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:15:43,820](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:15:43,821](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:15:46,010](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:46] "GET / HTTP/1.1" 200 -
+[2013-08-11 22:15:46,210](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:46] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:15:46,386](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:46] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:15:46,570](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:46] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:15:50,019](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:50] "GET /get_images HTTP/1.1" 500 -
+[2013-08-11 22:15:50,079](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:50] "GET /get_images?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2013-08-11 22:15:50,081](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:50] "GET /get_images?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2013-08-11 22:15:50,083](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:50] "GET /get_images?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2013-08-11 22:15:50,137](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:50] "GET /get_images?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 22:15:50,214](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:50] "GET /get_images?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-11 22:15:50,216](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:15:50] "GET /get_images?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+[2013-08-11 22:25:49,890](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:25:49,928](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:36:45,101](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:36:45,161](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:36:49,672](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:36:49,675](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:36:52,164](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:36:52] "GET /get_images HTTP/1.1" 200 -
+[2013-08-11 22:38:26,968](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:38:27,008](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:38:37,491](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-11 22:38:37,520](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:38:40,235](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:38:40,236](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:38:42,969](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:38:42] "GET /get_images HTTP/1.1" 200 -
+[2013-08-11 22:38:43,176](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:38:43] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:38:43,352](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:38:43] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:38:43,540](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:38:43] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:39:50,379](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-11 22:39:50,380](INFO)werkzeug :  * Restarting with reloader
+[2013-08-11 22:39:51,955](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:39:51] "GET /get_images HTTP/1.1" 200 -
+[2013-08-11 22:39:52,171](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:39:52] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-11 22:39:52,355](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:39:52] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-11 22:39:52,531](INFO)werkzeug : 127.0.0.1 - - [11/Aug/2013 22:39:52] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-11 22:40:16,167](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:40:16] "GET / HTTP/1.1" 200 -
+[2013-08-11 22:40:21,155](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:40:21] "GET /%E4%B8%AA%E4%BD%93%E3%80%81 HTTP/1.1" 404 -
+[2013-08-11 22:40:27,019](INFO)werkzeug : 192.168.81.1 - - [11/Aug/2013 22:40:27] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 01:34:43,294](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 01:34:43,295](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:34:47,246](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:34:47] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 01:34:47,613](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:34:47] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 01:34:48,249](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:34:48] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 01:34:48,559](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:34:48] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 01:36:09,035](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 01:36:09,036](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:36:10,780](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:36:10] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 01:36:11,089](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:36:11] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 01:36:11,414](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:36:11] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 01:36:11,702](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:36:11] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 01:36:26,882](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 01:36:26,883](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:36:28,683](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:36:28] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 01:36:30,923](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:36:30] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 01:36:31,106](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:36:31] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 01:36:31,286](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:36:31] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 01:37:16,127](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:37:16] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 01:37:16,398](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:37:16] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 01:37:16,580](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:37:16] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 01:37:16,768](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:37:16] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 01:42:47,773](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 01:42:47] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 01:42:48,107](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 01:42:48] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 01:42:48,377](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 01:42:48] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 01:42:50,729](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 01:42:50] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 01:45:54,883](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 01:45:54,921](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:47:05,890](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 01:47:05,927](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:47:17,406](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 01:47:17,433](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:47:30,927](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 01:47:30,961](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:48:37,985](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 01:48:38,021](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:52:11,037](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 01:52:11,038](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:52:14,736](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:52:14] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 01:52:15,016](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:52:15] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 01:52:15,268](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:52:15] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 01:52:15,510](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:52:15] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 01:59:42,181](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 01:59:42,182](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 01:59:45,050](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:59:45] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 01:59:45,384](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:59:45] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 01:59:45,688](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:59:45] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 01:59:45,988](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:59:45] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 01:59:54,518](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 01:59:54] "GET /get_images?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-12 02:00:12,432](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:00:12] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:00:49,282](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:00:49,283](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:00:51,151](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:00:51] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:00:51,460](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:00:51] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:00:51,690](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:00:51] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:00:51,922](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:00:51] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:03:07,590](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:03:07,590](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:03:10,074](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:03:10] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:03:10,396](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:03:10] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:03:10,700](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:03:10] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:03:11,001](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:03:11] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:04:00,728](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 02:04:00] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 02:04:01,054](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 02:04:01] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:04:01,357](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 02:04:01] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:04:01,608](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 02:04:01] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:09:32,803](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:09:32,803](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:09:34,509](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:09:34] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:09:34,781](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:09:34] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:09:35,025](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:09:35] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:09:35,270](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:09:35] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:13:08,174](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:13:08,174](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:13:11,175](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:13:11] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:13:11,681](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:13:11] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:13:11,929](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:13:11] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:13:12,180](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:13:12] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:13:57,638](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:13:57,639](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:13:59,665](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:13:59] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:13:59,934](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:13:59] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:14:00,216](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:14:00] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:14:00,520](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:14:00] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:16:44,974](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:16:44,974](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:16:47,737](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:16:47] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:16:47,939](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:16:47] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:16:48,119](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:16:48] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:16:48,296](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:16:48] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:22:14,895](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:22:14,897](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:22:18,691](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:22:18] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:22:18,935](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:22:18] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:22:19,110](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:22:19] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:22:19,287](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:22:19] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:23:13,718](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 02:23:13,748](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:23:24,225](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 02:23:24,255](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:24:06,262](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:24:06,263](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:24:09,585](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:24:09] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:24:09,837](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:24:09] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:24:10,008](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:24:10] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:24:10,194](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:24:10] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:24:11,163](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:24:11] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:24:11,358](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:24:11] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:24:11,540](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:24:11] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:24:11,728](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:24:11] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:25:45,010](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:25:45,011](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:25:46,228](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:25:46] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:25:46,465](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:25:46] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:25:46,673](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:25:46] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:25:46,908](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:25:46] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:26:03,350](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:03] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 02:26:41,185](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:41] "GET /get_images?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-12 02:26:42,516](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:42] "GET /get_images?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-12 02:26:50,726](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:50] "GET /get_quota/ HTTP/1.1" 500 -
+[2013-08-12 02:26:50,780](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:50] "GET /get_quota/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2013-08-12 02:26:50,781](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:50] "GET /get_quota/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2013-08-12 02:26:50,783](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:50] "GET /get_quota/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2013-08-12 02:26:50,841](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:50] "GET /get_quota/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-12 02:26:50,881](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:50] "GET /get_quota/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2013-08-12 02:26:50,883](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:26:50] "GET /get_quota/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+[2013-08-12 02:30:22,621](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 02:30:22,653](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:30:25,062](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:30:25,063](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:30:30,678](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:30:30] "GET /get_flavors HTTP/1.1" 200 -
+[2013-08-12 02:31:01,584](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:31:01] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:31:30,882](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:31:30,882](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:31:32,456](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:31:32] "GET / HTTP/1.1" 200 -
+[2013-08-12 02:31:32,783](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:31:32] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:31:33,094](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:31:33] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:31:33,419](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:31:33] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:33:35,557](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 02:33:35,594](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:33:39,227](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:33:39,228](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:33:56,141](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:33:56] "GET /reqmake HTTP/1.1" 200 -
+[2013-08-12 02:36:01,749](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 02:36:01,787](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:36:50,500](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:36:50,500](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:43:36,722](INFO)werkzeug :  * Running on http://0.0.0.0:8080/
+[2013-08-12 02:43:36,722](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:43:40,059](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:43:40] "GET /reqmake HTTP/1.1" 200 -
+[2013-08-12 02:43:40,304](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:43:40] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:43:40,527](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:43:40] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:43:40,719](INFO)werkzeug : 127.0.0.1 - - [12/Aug/2013 02:43:40] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:49:39,258](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 02:49:39] "GET /get_images HTTP/1.1" 200 -
+[2013-08-12 02:49:39,459](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 02:49:39] "GET /static/css/bootstrap.css HTTP/1.1" 304 -
+[2013-08-12 02:49:39,637](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 02:49:39] "GET /static/js/jQuery.js HTTP/1.1" 304 -
+[2013-08-12 02:49:39,836](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 02:49:39] "GET /static/js/bootstrap.js HTTP/1.1" 304 -
+[2013-08-12 02:50:28,379](INFO)werkzeug : 192.168.81.1 - - [12/Aug/2013 02:50:28] "GET /reqmake HTTP/1.1" 200 -
+[2013-08-12 02:53:03,330](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 02:53:03,353](INFO)werkzeug :  * Restarting with reloader
+[2013-08-12 02:54:31,457](INFO)werkzeug :  * Detected change in 'app.py', reloading
+[2013-08-12 02:54:31,482](INFO)werkzeug :  * Restarting with reloader

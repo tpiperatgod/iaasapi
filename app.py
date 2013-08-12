@@ -15,6 +15,8 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
 from tasks import checkserver
 
 import decorator
+import json
+import config as FLAG
 
 RSPDE = decorator.ResponseDecorator()
 
@@ -34,6 +36,10 @@ LOG = logging.getLogger(__name__)
 @app.before_request
 def before_request():
     g.iaas = utils.DoAsIAAS()
+    g.env = request.environ
+    g.p = request.form
+    g.h = request.headers
+    #g.p = json.loads(request.form.items()[0][0])
     pass
 
 
@@ -41,13 +47,15 @@ def before_request():
 def teardown_request(exception):
     pass
 
-
-@app.route('/', methods=["POST"])
+@app.route('/', methods=['POST', 'GET'])
 def index():
+    info = '[*] IAASAPI POWER ON [*]'
+    return render_template('index.html', info=info)
 
-    return '[*] IAASAPI POWER ON [*]'
-
-
+@app.route('/reqmake', methods=['POST', 'GET'])
+def build_request():
+    func = FLAG.FUNC_MAP
+    return render_template('reqmake.html', func=func)
 
 
 
@@ -69,25 +77,38 @@ def release_tenant(tenant_id):
     rsp = g.iaas.release_tenant(tenant_id)
     return rsp
 
-@app.route('/get_quota/', methods=['POST'])
+@app.route('/get_quota/', methods=['POST', 'GET'])
+def get_quota_v():
+    rsp = get_quota()
+    return render_template("index.html", rsp=rsp)
+
 @RSPDE.get_quota_deco
 def get_quota():
-    tenant_id = request.form.get('tenant_id', None)
+    tenant_id = g.p.get('tenant_id', None)
     print tenant_id
     rsp = g.iaas.get_quota(tenant_id)
     return rsp
 
 @app.route('/get_images')
+def get_images_v():
+    rsp = get_images()
+    return render_template("index.html", rsp=rsp)
+
 @RSPDE.get_images_deco  
 def get_images():
     rsp = g.iaas.get_images()
     return rsp
 
 @app.route('/get_flavors')
+def get_flavors_v():
+    rsp = get_flavors()
+    return render_template("index.html", rsp=rsp)
+
 @RSPDE.get_flavors_deco
 def get_flavors():
     rsp = g.iaas.get_flavors()
     return rsp
 
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080, debug=True)

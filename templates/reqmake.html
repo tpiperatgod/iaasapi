@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+<body>
+    <div class="container-fluid">
+    <div class="row-fluid">
+    <div class="span2">
+        <form>
+            <fieldset>
+            <legend>Request Info</legend>
+            <label>Urls</label>
+            <span class="label label-inverse">{{ g.env.PATH_INFO }}</span><br \>
+            <span class="help-block">Example block-level help text here.</span>
+            <label>Methods</label>
+            <span class="label label-inverse">{{ g.env.REQUEST_METHOD }}</span><br \>
+            <span class="help-block">Example block-level help text here.</span>
+            <label>Params</label>
+            <span class="label label-inverse">{{ g.p }}</span><br \>
+            <span class="help-block">Example block-level help text here.</span>
+            </fieldset>
+        </form>
+        <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+            <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            System Config
+            </a>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse in">
+            <div class="accordion-inner">
+            Edit config file
+            </div>
+            </div>
+            </div>
+        </div>
+    <!--Sidebar content-->
+    </div>
+    <div class="span10">
+        <br \><br \>
+        <ul class="nav nav-tabs">
+            <li class="active">
+            <a href="#">首页</a>
+            </li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">...</a></li>
+        </ul>
+        <div class="hero-unit">
+            <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Option one is this and that—be sure to include why it's great
+            </label>
+            <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Option two can be something else and selecting it will deselect option one
+            </label>
+        </div>
+    <!--Body content-->
+    </div>
+    </div>
+    </div>
+</body>
+{% endblock %}

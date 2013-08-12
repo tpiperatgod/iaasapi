@@ -48,3 +48,9 @@ SERVICE_PATH_TEMP = {'getToken': "/v2.0/tokens",
                      'getImages': "/%s/images/detail",
                      'getFlavors': "/%s/flavors/detail",
                      'createAcl': "/v2.0/acls"}
+
+FUNC_MAP = {"GET QUOTA": {"url": "/get_quota",
+                                                      "method": "POST",
+                                                      "param": {"tenant_id": ""},
+                                                      "header": {}},
+                           "GET IMAGES":{}}
