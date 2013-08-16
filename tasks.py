@@ -39,7 +39,7 @@ def send_message_callback(msg):
 
 
 @celery.task(name="tasks.checkserver")
-def checkserver(quantity, delay_req, server_id, _type='check_status'):
+def checkserver(quantity, delay_req, _type='check_status'):
     act = 0
     for i in range(24):
         time.sleep(5)

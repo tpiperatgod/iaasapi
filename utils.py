@@ -225,13 +225,15 @@ class DoAsIAAS():
         fin_node = self.node_scheduler()
         t = time.time()
         t = int(t)
-        delay_req = []
+        delay_rsp = []
         rsp = {}
         req_data = {}
         req_data['seq'] = t
         req_data['msg'] = "正在发送rabbitMQ，请获取对应云主机数据！"
         req_data['success'] = True
         req_data['timeout'] = 120
+        rsp['data'] = req_data
+        fin_rsp = json.dumps(rsp)
 
         for q in range(quantity):
             port_info = []
@@ -239,98 +241,33 @@ class DoAsIAAS():
             print "+++++ PORT INFO: %(port_id)s +++++" % locals()
             acl = self.create_acl(port_id)
             print "+++++ ACL INFO: %(acl)s +++++" % locals()
-            port_info.append(
-                {"uuid": "%s" % FLAG.NETWORK_ID, "port": "%s" % port_id})
+            port_info.append({"uuid": "%s" % FLAG.NETWORK_ID, "port": "%s" % port_id})
             port_info = json.dumps(port_info)
 
-            imageRef = "http://%s%s/images/%s" % (
-                FLAG.NOVA_IP, self.nova_path, image_id)
-            flavorRef = "http://%s%s/flavors/%s" % (
-                FLAG.NOVA_IP, self.nova_path, flavor_id)
+            imageRef = "http://%s%s/images/%s" % (FLAG.NOVA_IP, self.nova_path, image_id)
+            flavorRef = "http://%s%s/flavors/%s" % (FLAG.NOVA_IP, self.nova_path, flavor_id)
             params = """{"os:scheduler_hints": {"disk_dir": "%s"},
-                        "server": {"name": "%s", "imageRef": "%s",
-                        "availability_zone": "nova:%s", "flavorRef": "%s", "max_count": 1,
-                        "min_count": 1, "networks": %s}}""" % \
-                (FLAG.DISK_DIR, FLAG.SERVER_NAME_MAP[
-                 appkey], imageRef, fin_node[0], flavorRef, port_info)
+                            "server": {"name": "%s", "imageRef": "%s",
+                            "availability_zone": "nova:%s", "flavorRef": "%s", "max_count": 1,
+                            "min_count": 1, "networks": %s}}""" % \
+                (FLAG.DISK_DIR, FLAG.SERVER_NAME_MAP[appkey], 
+                    imageRef, fin_node[0], flavorRef, port_info)
             print "+++++" + params + "+++++"
             headers = {"X-Auth-Token": self.token,
-                       "Content-type": "application/json"}
+                                "Content-type": "application/json"}
 
             req = {"flag": "createServer",
-                   "url": FLAG.NOVA_IP,
-                   "method": "POST",
-                   "path": FLAG.SERVICE_PATH_TEMP['createServer'] % self.nova_path,
-                   "params": params,
-                   "headers": headers}
+                       "url": FLAG.NOVA_IP,
+                       "method": "POST",
+                       "path": FLAG.SERVICE_PATH_TEMP['createServer'] % self.nova_path,
+                       "params": params,
+                       "headers": headers}
 
             rreq = json.dumps(req)
             rsp_from_iaas = json.loads(self.knock_iaas(rreq))
-            delay_req.append(rsp_from_iaas)
+            delay_rsp.append(rsp_from_iaas)
 
-        print delay_req
-        try:
-            pid = os.fork()
-            if pid == 0:
-                act = 0
-                for i in range(24):
-                    time.sleep(5)
-                    vm_info = []
-                    for x in range(quantity):
-                        server_id = delay_req[x]['data']['server']['id']
-                        passwd = delay_req[x]['data']['server']['adminPass']
-                        try:
-                            status = self.check_server(
-                                server_id, 'check_status')
-
-                            status = json.loads(status)
-                            s = status['data']['status']
-                        except:
-                            status['data']['status'] = 'ERROR'
-
-                        vm_info.append({'id': server_id,
-                                        'passwd': passwd,
-                                        'status': status['data']['status']})
-                        if status['data']['status'] != 'ACTIVE':
-                            if status == 'ERROR':
-                                continue
-                        else:
-                            act += 1
-                            continue
-
-                    if act == quantity:
-                        break
-
-                data = {}
-                data['success'] = True
-                data['servers'] = []
-
-                print vm_info, len(vm_info)
-
-                for vm in vm_info:
-                    data_server = {}
-                    print vm
-                    print "++"
-                    server_id = vm['id']
-                    ip = self.check_server(server_id, 'get_ip_info')
-                    data_server['id'] = server_id
-                    data_server['passwd'] = vm['passwd']
-                    data_server['ip'] = ip
-                    data_server['status'] = vm['status']
-                    data['servers'].append(data_server)
-
-                data['message'] = "云主机创建成功"
-                data['seq'] = t
-                rsp = data
-                send_message_callback(rsp)
-                sys.exit(0)
-            else:
-                rsp['data'] = req_data
-                rsp_to_paas = json.dumps(rsp)
-                return rsp_to_paas
-
-        except OSError, e:
-            pass
+        return fin_rsp, delay_rsp
 
     def start_server(self, server_id):
         params = '{"os-start": null}'

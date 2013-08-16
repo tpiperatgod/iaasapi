@@ -42,8 +42,8 @@ class ResponseDecorator():
         return get_flavors_rsp_deco
 
     def create_tenant_deco(self, func):
-        def create_tenant_rsp_deco(tenant_name):
-            rsp = func(tenant_name)
+        def create_tenant_rsp_deco():
+            rsp = func()
             self.data['success'] = True
             self.data['message'] = ""
             tenant_id = rsp['data']['tenant']['id']
@@ -54,8 +54,8 @@ class ResponseDecorator():
         return create_tenant_rsp_deco
 
     def get_quota_deco(self, func):
-        def get_quota_rsp_deco(tenant_id):
-            rsp = func(tenant_id)
+        def get_quota_rsp_deco():
+            rsp = func()
             quota = {}
             self.data['message'] = ""
             self.data['quotas'] = {}
@@ -86,8 +86,8 @@ class ResponseDecorator():
         return get_quota_rsp_deco
 
     def  release_tenant_deco(self, func):
-        def release_tenant_rsp_deco(tenant_id):
-            rsp = func(tenant_id)
+        def release_tenant_rsp_deco():
+            rsp = func()
             self.data['message'] = ""
             self.data['success'] = rsp['data']['success']
             self.fin_rsp['data'] = self.data

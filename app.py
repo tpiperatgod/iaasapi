@@ -15,8 +15,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
 from tasks import checkserver
 
 import decorator
-import json
-import config as FLAG
+
 
 RSPDE = decorator.ResponseDecorator()
 
@@ -32,14 +31,18 @@ app.config.from_object('config')
 logging.config.fileConfig("logging.conf")
 LOG = logging.getLogger(__name__)
 
+REQ_START = "*"*20 + "  REQUEST START  " + "*"*20
+REQ_END = "*"*20 + "  REQUEST END  " + "*"*20
+RSP_START = "*"*20 + "  RESPONSE START  " + "*"*20
+RSP_END = "*"*20 + "  RESPONSE END  " + "*"*20
 
 @app.before_request
 def before_request():
+    LOG.debug(REQ_START)
     g.iaas = utils.DoAsIAAS()
     g.env = request.environ
-    g.p = request.form
+    g.p = request.args
     g.h = request.headers
-    #g.p = json.loads(request.form.items()[0][0])
     pass
 
 
@@ -49,63 +52,119 @@ def teardown_request(exception):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    info = '[*] IAASAPI POWER ON [*]'
-    return render_template('index.html', info=info)
+    power_info = ">> [*] IAASAPI POWER ON [*]"
+    version_info = ">> VERSION 1.0 on Flask"
+    author_info = ">> by turtle_ender @2013.8"
+    print g.p
+    LOG.debug(power_info)
+    LOG.debug(version_info)
+    LOG.debug(author_info)
+    info = power_info + '\n' + version_info + '\n' + author_info
+    return info
 
-@app.route('/reqmake', methods=['POST', 'GET'])
-def build_request():
-    func = FLAG.FUNC_MAP
-    return render_template('reqmake.html', func=func)
+@app.route('/services/iaasCreateServer.action', methods=['POST'])
+def create_server():
+    image_id = g.p.get('imageId', None)
+    flavor_id = g.p.get('flavorId', None)
+    quantity = int(g.p.get('quantity', None))
+    appkey = g.h.get('x-wocloud-iaas-appkey', None)
+    _type = 'check_status'
+    LOG.debug('>> image id:\t %(image_id)s <<' % locals())
+    LOG.debug('>> flavor id:\t %(flavor_id)s <<' % locals())
+    LOG.debug('>> quantity:\t %(quantity)s <<' % locals())
+    LOG.debug('>> appkey:\t %(appkey)s <<' % locals())
+    LOG.debug(REQ_END)
+    if image_id and flavor_id:
+        rsp, delay_rsp = g.iaas.create_server(image_id, flavor_id, appkey, quantity)
+        res = checkserver.apply_async((quantity, delay_rsp, _type))
+        context = {"id": res.task_id, "delay_req": delay_rsp, "type": _type}
+        LOG.debug(">>> CELERY MSG: %(context)s" % locals())
+        return rsp
+    else:
+        return None
 
+@app.route('/services/iaasStartServer.action', methods=['POST'])
+def start_server():
+    server_id = g.p.get('serverId', None)
+    LOG.debug('>> server id:\t %(server_id)s <<' % locals())
+    LOG.debug(REQ_END)
+    rsp = g.iaas.start_server(server_id)
+    return rsp
 
+@app.route('/services/iaasStopServer.action', methods=['POST'])
+def stop_server():
+    server_id = g.p.get('serverId', None)
+    LOG.debug('>> server id:\t %(server_id)s <<' % locals())
+    LOG.debug(REQ_END)
+    rsp = g.iaas.stop_server(server_id)
+    return rsp
 
-@app.route('/check_server/<server_id>/<_type>')
-def check_server(server_id, _type='normal'):
-    res = checkserver.apply_async((server_id, _type))
-    context = {"id": res.task_id, "server_id": server_id, "type": _type}
-    goto = "{}".format(context['id'])
-    return jsonify(goto=goto)
+@app.route('/services/iaasCheckServer.action', methods=['POST'])
+def check_server():
+    server_id = g.p.get('serverId', None)
+    LOG.debug('>> server id:\t %(server_id)s <<' % locals())
+    LOG.debug(REQ_END)
+    rsp = g.iaas.check_server(server_id, _type='normal')
+    return rsp
 
-@app.route('/create_tenant/<tenant_name>')
+@app.route('/services/iaasGetServerStatus.action', methods=['POST'])
+def get_status():
+    server_id = g.p.get('serverId', None)
+    LOG.debug('>> server id:\t %(server_id)s <<' % locals())
+    LOG.debug(REQ_END)
+    rsp = g.iaas.check_server(server_id, _type='check_status')
+    return rsp
+
+@app.route('/services/iaasReleaseServer.action', methods=['POST'])
+def release_server():
+    server_id = g.p.get('serverId', None)
+    LOG.debug('>> server id:\t %(server_id)s <<' % locals())
+    LOG.debug(REQ_END)
+    rsp = g.iaas.release_server(server_id)
+    return rsp
+
+@app.route('/services/iaasGetOsTenant.action', methods=['POST'])
 @RSPDE.create_tenant_deco
-def create_tenant(tenant_name):
+def create_tenant():
+    tenant_name = g.p.get('portalTenantId', None)
+    LOG.debug('>> tenant name:\t %(tenant_name)s <<' % locals())
+    LOG.debug(REQ_END)
     rsp = g.iaas.create_tenant(tenant_name)
     return rsp
 
-@app.route('/release_tenant/<tenant_id>')
-def release_tenant(tenant_id):
+@app.route('/services/iaasReleaseTenant.action', methods=['POST'])
+@RSPDE.release_tenant_deco
+def release_tenant():
+    LOG.debug('>> release tenant <<')
+    tenant_id = g.h.get('x-wocloud-iaas-tenantid', None)
+    LOG.debug('>> tenant id:\t %(tenant_id)s <<' % locals())
+    LOG.debug(REQ_END)
     rsp = g.iaas.release_tenant(tenant_id)
     return rsp
 
-@app.route('/get_quota/', methods=['POST', 'GET'])
-def get_quota_v():
-    rsp = get_quota()
-    return render_template("index.html", rsp=rsp)
-
+@app.route('/services/iaasGetQuotas.action', methods=['POST'])
 @RSPDE.get_quota_deco
 def get_quota():
-    tenant_id = g.p.get('tenant_id', None)
-    print tenant_id
+    LOG.debug('>> get quota <<')
+    tenant_id = g.h.get('x-wocloud-iaas-tenantid', None)
+    LOG.debug('>> tenant id:\t %(tenant_id)s <<' % locals())
+    LOG.debug(REQ_END)
     rsp = g.iaas.get_quota(tenant_id)
     return rsp
 
-@app.route('/get_images')
-def get_images_v():
-    rsp = get_images()
-    return render_template("index.html", rsp=rsp)
-
+@app.route('/services/iaasGetImages.action', methods=['POST'])
 @RSPDE.get_images_deco  
 def get_images():
+    LOG.debug('>> get images <<')
+    LOG.debug(REQ_END)
     rsp = g.iaas.get_images()
     return rsp
 
-@app.route('/get_flavors')
-def get_flavors_v():
-    rsp = get_flavors()
-    return render_template("index.html", rsp=rsp)
-
+@app.route('/services/iaasGetFlavors.action', methods=['POST'])
 @RSPDE.get_flavors_deco
 def get_flavors():
+    LOG.debug('>> get flavors <<')
+    LOG.debug(REQ_END)
     rsp = g.iaas.get_flavors()
     return rsp
 
