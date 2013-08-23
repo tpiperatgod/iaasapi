@@ -75,9 +75,9 @@ def create_server():
     LOG.debug('>> appkey:\t %(appkey)s <<' % locals())
     LOG.debug(REQ_END)
     if image_id and flavor_id:
-        rsp, delay_rsp = g.iaas.create_server(image_id, flavor_id, appkey, quantity)
-        res = checkserver.apply_async((quantity, delay_rsp, _type))
-        context = {"id": res.task_id, "delay_req": delay_rsp, "type": _type}
+        rsp, delay_rsp, t = g.iaas.create_server(image_id, flavor_id, appkey, quantity)
+        res = checkserver.apply_async((quantity, delay_rsp, t, _type))
+        context = {"id": res.task_id, "delay_req": delay_rsp, "time": t, "type": _type}
         LOG.debug(">>> CELERY MSG: %(context)s" % locals())
         return rsp
     else:

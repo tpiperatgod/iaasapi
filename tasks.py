@@ -11,7 +11,7 @@ import pika
 import json
 
 celery = Celery("tasks",
-                broker='amqp://guest:guest@192.168.81.128:5672',
+                broker='amqp://guest:guest@192.168.198.128:5672',
                 backend='amqp')
 
 g_iaas = utils.DoAsIAAS()
@@ -39,7 +39,7 @@ def send_message_callback(msg):
 
 
 @celery.task(name="tasks.checkserver")
-def checkserver(quantity, delay_req, _type='check_status'):
+def checkserver(quantity, delay_req, t, _type='check_status'):
     act = 0
     for i in range(24):
         time.sleep(5)
@@ -50,15 +50,15 @@ def checkserver(quantity, delay_req, _type='check_status'):
             try:
                 status = json.loads(g_iaas.check_server(server_id, 'check_status'))
 
-                status = status['data']['status']
+                s = status['data']['status']
             except:
-                status['data']['status'] = 'ERROR'
+                s = 'ERROR'
 
             vm_info.append({'id': server_id,
                             'passwd': passwd,
-                            'status': status['data']['status']})
-            if status['data']['status'] != 'ACTIVE':
-                if status == 'ERROR':
+                            'status': s})
+            if s != 'ACTIVE':
+                if s == 'ERROR':
                     continue
             else:
                 act += 1

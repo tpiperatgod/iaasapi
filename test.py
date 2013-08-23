@@ -8,11 +8,11 @@ import urlparse
 import urllib
 import os
 
-SER_ID = "75821b8b-03ff-4a57-81b6-9fd2cd74e2b3"
+SER_ID = "7673c492-019a-4e9a-9ed0-4b4673773d94"
 TENT_NAME = "test_t"
-IMG_ID = "ef132735-2419-4984-8d12-2a769cdb5abd"
-FLR_ID = "d97a0d30-537a-4543-9aa8-2aed966d1b10"
-Q = "1"
+IMG_ID = "83489e51-89e3-48af-8f45-313b3fe56915"
+FLR_ID = "e14fa042-b6ee-4966-aa7d-6da5dce06cd1"
+quantity = "1"
 appkey = "3a754eb9-7689-4d9a-ab9a-g451sd124113"
 TENT_ID = "e6442e3d73cc4a848d5acb44b618c144"
 
@@ -185,11 +185,11 @@ def release_tenant():
     print rsp
 
 if __name__ == '__main__':
-    index()
+    #index()
     #get_quota()
     #get_image()
     #get_flavor()
-    #create_server()
+    create_server()
     #start_server()
     #stop_server()
     #release_server()
@@ -197,4 +197,3 @@ if __name__ == '__main__':
     #release_tenant()
     #check_server()
     #get_status()
-    

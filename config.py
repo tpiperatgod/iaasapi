@@ -1,5 +1,5 @@
 # RABBITMQ
-RABBITMQ_IP = '192.168.81.128'
+RABBITMQ_IP = '192.168.198.128'
 RABBITMQ_USER = 'guest'
 RABBITMQ_PASSWORD = 'guest'
 RABBITMQ_EXCHANGE = 'createCloudHost'
@@ -18,7 +18,7 @@ KEYSTONE_IP = OPSTACK_IP + ':35357'
 # QUANTUM
 QUANTUM_IP = '192.168.0.56:9696'
 ACL_NAME = 'ACLNAME'
-NETWORK_ID = 'f8aff156-7e5b-4286-8883-67b1e7aa7c8d'
+NETWORK_ID = 'a33aad0f-f859-4989-a7f5-213c8cf7b10e'
 IFACE = 'eth1'
 
 # COMPUTE
@@ -30,24 +30,24 @@ NODE_MAP = {'NN2': '192.168.0.57',
             'NN3': '192.168.0.58'}
 
 # IAASAPI
-SERVER_IP = '172.18.1.17'
+SERVER_IP = '192.168.198.128'
 SERVER_PORT = '8080'
 
 SERVICE_PATH_TEMP = {'getToken': "/v2.0/tokens",
-                     'createTenant': "/v2.0/tenants",
-                     'releaseTenant': "/v2.0/tenants/%s",
-                     'getQuota': "/%s/os-quota-sets/%s",
-                     'createPort': "/v2.0/ports",
-                     'createServer': "/%s/servers",
-                     'startServer': "/%s/servers/%s/action",
-                     'stopServer': "/%s/servers/%s/action",
-                     'releaseServer': "/%s/servers/%s",
-                     'checkServer': "/%s/servers/%s",
-                     'startServer': "/%s/servers/%s/action",
-                     'stopServer': "/%s/servers/%s/action",
-                     'getImages': "/%s/images/detail",
-                     'getFlavors': "/%s/flavors/detail",
-                     'createAcl': "/v2.0/acls"}
+                                                'createTenant': "/v2.0/tenants",
+                                                'releaseTenant': "/v2.0/tenants/%s",
+                                                'getQuota': "/%s/os-quota-sets/%s",
+                                                'createPort': "/v2.0/ports",
+                                                'createServer': "/%s/servers",
+                                                'startServer': "/%s/servers/%s/action",
+                                                'stopServer': "/%s/servers/%s/action",
+                                                'releaseServer': "/%s/servers/%s",
+                                                'checkServer': "/%s/servers/%s",
+                                                'startServer': "/%s/servers/%s/action",
+                                                'stopServer': "/%s/servers/%s/action",
+                                                'getImages': "/%s/images/detail",
+                                                'getFlavors': "/%s/flavors/detail",
+                                                'createAcl': "/v2.0/acls"}
 
 FUNC_MAP = {"GET QUOTA": {"url": "/get_quota",
                                                       "method": "POST",

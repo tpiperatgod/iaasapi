@@ -250,7 +250,7 @@ class DoAsIAAS():
                             "server": {"name": "%s", "imageRef": "%s",
                             "availability_zone": "nova:%s", "flavorRef": "%s", "max_count": 1,
                             "min_count": 1, "networks": %s}}""" % \
-                (FLAG.DISK_DIR, FLAG.SERVER_NAME_MAP[appkey], 
+                (FLAG.DISK_DIR, FLAG.INSTANCE_NAME, 
                     imageRef, fin_node[0], flavorRef, port_info)
             print "+++++" + params + "+++++"
             headers = {"X-Auth-Token": self.token,
@@ -267,7 +267,7 @@ class DoAsIAAS():
             rsp_from_iaas = json.loads(self.knock_iaas(rreq))
             delay_rsp.append(rsp_from_iaas)
 
-        return fin_rsp, delay_rsp
+        return fin_rsp, delay_rsp, t
 
     def start_server(self, server_id):
         params = '{"os-start": null}'
